@@ -337,7 +337,7 @@ function render(rows) {
 
   // Account stats
   const acctClaims = {};
-  filtered.forEach(r => { if (r.u) acctClaims[r.u] = (acctClaims[r.u]||0)+1; });
+  rows.forEach(r => { if (r.u) acctClaims[r.u] = (acctClaims[r.u]||0)+1; });
   const uniqueAccts = Object.keys(acctClaims).length;
   const multiAccts = Object.values(acctClaims).filter(c=>c>1).length;
   document.getElementById('kpiAccounts').textContent = uniqueAccts.toLocaleString();
